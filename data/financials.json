@@ -1,0 +1,75 @@
+{
+  "company": {
+    "name": "HD현대중공업",
+    "corp_code": "01390344"
+  },
+  "report": {
+    "business_year": 2025,
+    "report_type": "사업보고서",
+    "report_code": "11011",
+    "receipt_number": "20260320000859",
+    "period_end": "2025-12-31",
+    "financial_statement_scope": "연결"
+  },
+  "financials": [
+    {
+      "item": "매출액",
+      "amount": 17580633257000,
+      "unit": "KRW",
+      "statement": "포괄손익계산서",
+      "account_id": "ifrs-full_Revenue"
+    },
+    {
+      "item": "영업이익",
+      "amount": 2037510103000,
+      "unit": "KRW",
+      "statement": "포괄손익계산서",
+      "account_id": "dart_OperatingIncomeLoss"
+    },
+    {
+      "item": "수주잔고",
+      "amount": 56384472000000,
+      "reported_amount": 56384472,
+      "reported_unit": "KRW_million",
+      "unit": "KRW",
+      "as_of": "2025-12-31",
+      "scope": "조선·해양플랜트·기타 합계"
+    }
+  ],
+  "order_backlog_breakdown": [
+    {
+      "category": "조선",
+      "amount": 44351125,
+      "unit": "KRW_million"
+    },
+    {
+      "category": "해양플랜트",
+      "amount": 2445087,
+      "unit": "KRW_million"
+    },
+    {
+      "category": "기타",
+      "amount": 9588260,
+      "unit": "KRW_million"
+    }
+  ],
+  "sources": [
+    {
+      "description": "OpenDART 재무제표 전체 자료(연결)",
+      "endpoint": "https://opendart.fss.or.kr/api/fnlttSinglAcntAll.json",
+      "parameters": {
+        "corp_code": "01390344",
+        "bsns_year": "2025",
+        "reprt_code": "11011",
+        "fs_div": "CFS"
+      }
+    },
+    {
+      "description": "OpenDART 사업보고서 원문 - 4. 매출 및 수주상황 > 다. 수주상황",
+      "endpoint": "https://opendart.fss.or.kr/api/document.xml",
+      "parameters": {
+        "rcept_no": "20260320000859"
+      }
+    }
+  ]
+}
