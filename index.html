@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>[이름 입력] | 선박 전장설계 포트폴리오</title>
+  <style>
+    :root{--navy:#1F3A5F;--sky:#E8F1FA;--ink:#203044;--muted:#607086;--line:#d9e3ed;--white:#fff;--radius:8px}
+    *{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;background:var(--white);color:var(--ink);font-family:Arial,"Noto Sans KR",sans-serif;line-height:1.7} a{color:inherit} .container{width:min(1120px,calc(100% - 40px));margin:auto}
+    header{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.97);border-bottom:1px solid var(--line)} .nav{min-height:68px;display:flex;align-items:center;justify-content:space-between;gap:24px}.brand{font-weight:800;color:var(--navy);text-decoration:none;letter-spacing:.02em}.menu{display:flex;gap:20px;flex-wrap:wrap}.menu a{text-decoration:none;font-size:.92rem;color:var(--muted)}.menu a:hover,.menu a:focus{color:var(--navy)}
+    .hero{padding:92px 0 76px;background:var(--sky);border-bottom:1px solid var(--line)} .hero-grid{display:grid;grid-template-columns:1.35fr .65fr;gap:52px;align-items:end}.eyebrow{color:var(--navy);font-weight:800;letter-spacing:.12em;font-size:.8rem;text-transform:uppercase}.hero h1{font-size:clamp(2.3rem,6vw,4.7rem);line-height:1.13;margin:16px 0 24px;color:var(--navy);letter-spacing:-.05em}.hero p{max-width:720px;font-size:1.16rem;margin:0 0 28px}.actions{display:flex;gap:12px;flex-wrap:wrap}.button{display:inline-block;padding:11px 18px;border-radius:var(--radius);border:1px solid var(--navy);text-decoration:none;font-weight:700}.button.primary{background:var(--navy);color:#fff}.button.secondary{background:#fff;color:var(--navy)}.hero-note{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:22px}.hero-note strong{display:block;color:var(--navy);font-size:1.05rem;margin-bottom:8px}
+    section{padding:74px 0;border-bottom:1px solid var(--line)}.section-head{display:flex;justify-content:space-between;gap:24px;align-items:end;margin-bottom:30px}.section-head h2{margin:0;color:var(--navy);font-size:clamp(1.7rem,3vw,2.5rem);line-height:1.25}.section-head p{max-width:540px;margin:0;color:var(--muted)}.summary-grid,.card-grid,.project-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.stat,.card,.project{border:1px solid var(--line);border-radius:var(--radius);padding:22px;background:#fff}.stat{background:var(--sky)}.stat b{display:block;color:var(--navy);font-size:1.55rem;line-height:1.2;margin-bottom:6px}.stat span{color:var(--muted);font-size:.9rem}.card h3,.project h3{color:var(--navy);margin:0 0 9px;font-size:1.1rem}.card p,.project p{margin:0;color:var(--muted)}.tag{display:inline-block;margin:0 5px 5px 0;padding:3px 9px;border-radius:999px;background:var(--sky);color:var(--navy);font-size:.8rem;font-weight:700}.project{display:flex;flex-direction:column;gap:12px}.project .status{margin-top:auto;color:var(--navy);font-size:.88rem;font-weight:700;border-top:1px solid var(--line);padding-top:12px}
+    .split{display:grid;grid-template-columns:1fr 1fr;gap:28px}.panel{border-left:4px solid var(--navy);padding:20px 24px;background:#fafcfe}.panel h3{margin-top:0;color:var(--navy)}.panel ul{margin:0;padding-left:20px}.process{display:grid;grid-template-columns:repeat(6,1fr);gap:10px}.step{padding:18px 14px;background:var(--sky);border-radius:var(--radius);border-top:4px solid var(--navy)}.step b{display:block;color:var(--navy);margin-bottom:5px}.timeline{border-left:2px solid var(--navy);margin-left:8px;padding-left:24px;display:grid;gap:22px}.timeline-item{position:relative}.timeline-item:before{content:"";position:absolute;width:10px;height:10px;border-radius:50%;background:var(--navy);left:-31px;top:9px}.timeline-item h3{margin:0;color:var(--navy)}.timeline-item p{margin:3px 0;color:var(--muted)}.note{padding:18px 20px;background:#fffdf1;border:1px solid #e6dca6;border-radius:var(--radius);color:#5d542d}.small{font-size:.9rem;color:var(--muted)}footer{padding:42px 0;background:var(--navy);color:#fff}footer a{color:#fff}.footer-grid{display:flex;justify-content:space-between;gap:24px;align-items:start}footer p{margin:5px 0;color:#dce8f3}
+    @media(max-width:800px){.container{width:min(100% - 28px,640px)}.nav{align-items:flex-start;padding:14px 0;flex-direction:column;gap:8px}.menu{gap:10px 14px}.hero{padding:62px 0 54px}.hero-grid,.split{grid-template-columns:1fr}.summary-grid,.card-grid,.project-grid{grid-template-columns:1fr 1fr}.process{grid-template-columns:1fr 1fr}.section-head{display:block}.section-head p{margin-top:10px}.footer-grid{display:block}}
+    @media(max-width:500px){.summary-grid,.card-grid,.project-grid{grid-template-columns:1fr}.hero h1{font-size:2.45rem}.hero p{font-size:1rem}.process{grid-template-columns:1fr}.button{width:100%;text-align:center}}
+    /* HD현대중공업 로고 색상 기반 디자인 오버라이드 */
+    :root{--navy:#003478;--navy-dark:#00275c;--green-light:#39d353;--green-mid:#00a83b;--green-dark:#00843d;--sky:#eef9f0;--ink:#12345b;--muted:#526b82;--line:#cfe5d5}
+    .hero{background:var(--sky)}
+    .stat:nth-child(1){border-top:4px solid var(--green-dark)}
+    .stat:nth-child(2){border-top:4px solid var(--green-mid)}
+    .stat:nth-child(3){border-top:4px solid var(--green-light)}
+    .tag{color:var(--green-dark);background:var(--sky)}
+    .panel{border-left-color:var(--green-mid);background:#f7fcf8}
+    .step{border-top-color:var(--green-mid)}
+    .step:nth-child(3n+1){border-top-color:var(--green-dark)}
+    .step:nth-child(3n){border-top-color:var(--green-light)}
+    .timeline{border-left-color:var(--green-mid)}
+    .timeline-item:before{background:var(--green-dark)}
+    .note{background:#f5fbf6;border-color:#a9d9b3;color:#245d39}
+    footer{background:var(--navy-dark)}
+    #contact{background:#fff}
+    .brand, footer strong{color:var(--navy)}
+    footer{background:#fff;color:var(--navy);border-top:1px solid var(--line)}
+    footer p{color:var(--muted)}
+    footer a{color:var(--navy)}
+    .button.primary{background:var(--green-mid);border-color:var(--green-mid);color:#fff}
+    .button.primary:hover,.button.primary:focus{background:var(--green-dark);border-color:var(--green-dark)}
+    .button.secondary{background:#fff;border-color:var(--navy);color:var(--navy)}
+    #contact .button.secondary{border-color:var(--green-mid)}
+    .chatbot-action{position:fixed;top:84px;right:20px;z-index:20;padding:0;background:transparent}
+    .chatbot-action .container{width:auto}
+    .chatbot-action .button{width:auto;white-space:nowrap}
+    .button.chatbot-link{display:inline-flex;align-items:center;justify-content:center;width:48px;height:48px;padding:0;border-radius:50%;background:#1F3A5F;border-color:#1F3A5F;color:#fff;font-size:1.4rem}
+    .button.chatbot-link img{display:block;width:40px;height:40px;object-fit:contain}
+    .button.chatbot-link:hover,.button.chatbot-link:focus{background:#E8F1FA;border-color:#1F3A5F;color:#1F3A5F}
+    .button.chatbot-link:focus-visible{outline:3px solid #1F3A5F;outline-offset:3px}
+    @media(max-width:800px){.chatbot-action{top:122px;right:14px}}
+    #interest-company{background:var(--sky)}
+    #interest-company .section-head h2{color:var(--navy)}
+    .interest-card{padding:24px;border:1px solid var(--line);border-top:4px solid var(--green-mid);border-radius:var(--radius);background:var(--white)}
+    .interest-table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:var(--radius)}
+    .interest-table{width:100%;border-collapse:collapse;background:var(--white)}
+    .interest-table th,.interest-table td{padding:15px 18px;border-bottom:1px solid var(--line);text-align:left;vertical-align:middle}
+    .interest-table th{width:34%;background:var(--green-dark);color:var(--white);font-weight:700}
+    .interest-table td{font-size:1.02rem}
+    .interest-table tr:nth-child(even) td{background:var(--sky)}
+    .interest-table tr:last-child th,.interest-table tr:last-child td{border-bottom:0}
+    .interest-amount{font-variant-numeric:tabular-nums;font-weight:700}
+    .interest-subtitle{margin:26px 0 12px;color:var(--navy);font-size:1.15rem;border-left:4px solid var(--green-mid);padding-left:12px}
+    .interest-meta{margin:16px 0 0;color:var(--muted);font-size:.9rem}
+    .interest-meta span{display:inline-block;margin-right:18px}
+    .interest-source{margin:14px 0 0;padding:14px 16px;border-left:4px solid var(--green-dark);border-radius:var(--radius);background:var(--sky);color:var(--navy);font-size:.92rem;font-weight:700}
+    @media(max-width:500px){.interest-card{padding:16px}.interest-table th,.interest-table td{padding:12px 10px;font-size:.9rem}.interest-table th{width:38%}.interest-meta span{display:block;margin:4px 0}}
+  </style>
+</head>
+<body>
+  <header><div class="container nav"><a class="brand" href="#top">[이름 입력] · 전장설계</a><nav class="menu" aria-label="주요 메뉴"><a href="#about">About</a><a href="#capability">Capability</a><a href="#projects">Projects</a><a href="#process">Process</a><a href="#education">Education</a><a href="#contact">Contact</a></nav></div></header>
+  <main id="top">
+    <section class="hero"><div class="container hero-grid"><div><div class="eyebrow">Electrical Engineering Portfolio</div><h1>전기적 요구조건을<br>설계와 검증으로 연결하는<br>전장설계 지원자</h1><p>전기공학 기초를 바탕으로 전력변환 시스템을 시뮬레이션하고, C언어·Python·AI를 활용해 설계 검증과 분석 과정을 확장해 나가고 있습니다.</p><div class="actions"><a class="button primary" href="#projects">프로젝트 보기</a><a class="button secondary" href="#contact">이메일 연락</a></div></div><aside class="hero-note"><strong>목표 직무</strong><span>HD현대중공업 선박 전장설계</span><br><br><strong>현재 상태</strong><span>학습 및 개념 검증 프로젝트를 단계적으로 정리하는 중</span></aside></div></section>
+    <section id="about"><div class="container"><div class="section-head"><h2>지원자 핵심 요약</h2><p>확인된 정보만 사용하고, 세부 프로젝트 결과와 개인 정보는 준비되는 순서대로 추가합니다.</p></div><div class="summary-grid"><div class="stat"><b>부경대학교</b><span>전기공학과</span></div><div class="stat"><b>3.83/4.5</b><span>총학점/만점기준</span><br><b>3.96/4.5</b><span>전공학점/만점기준</span></div><div class="stat"><b>PLECS · C · Python</b><span>전력 시스템 모델링과 분석 도구</span></div></div><br><div class="split"><div class="panel"><h3>직무 이해</h3><p>선박 전장설계는 전력 공급·배전·추진·제어·전장품 시스템을 설계하고, 관련 사양·도면·계산서·검증자료를 작성하는 업무로 이해하고 있습니다.</p></div><div class="panel"><h3>지원 방향</h3><p>전기공학에서 학습한 전력·회로·제어 지식을 모델링과 검증으로 확장하고, 향후 선박 전력계통과 전장품 설계 역량으로 발전시키고자 합니다.</p></div></div></div></section>
+    <section id="capability"><div class="container"><div class="section-head"><h2>전장설계 역량 지도</h2><p>프로그램 이름이 아니라 문제를 정의하고 설계안을 검증하는 흐름으로 기술을 연결합니다.</p></div><div class="card-grid"><article class="card"><h3>전력·전기 시스템</h3><p>전기공학 전공 지식을 바탕으로 전력변환과 전기 시스템의 동작을 이해합니다.</p><br><span class="tag">전기공학</span><span class="tag">전력전자</span></article><article class="card"><h3>모델링·시뮬레이션</h3><p>PLECS로 태양광 GMPPT 시뮬레이션을 설계하고 정상·과도 조건을 검토하는 방향으로 역량을 확장합니다.</p><br><span class="tag">PLECS</span><span class="tag">검증</span></article><article class="card"><h3>제어·프로그래밍</h3><p>C언어를 통해 제어 로직과 임베디드 시스템의 기본 구조를 이해합니다.</p><br><span class="tag">C언어</span><span class="tag">제어 로직</span></article><article class="card"><h3>데이터·AI 활용</h3><p>Python과 AI를 활용해 웹·영상·CNN 기반 용접 불량 검사 에이전트를 제작했습니다. 세부 결과는 추후 입력합니다.</p><br><span class="tag">Python</span><span class="tag">CNN</span><span class="tag">자동화</span></article><article class="card"><h3>설계 문서화</h3><p>IEEE Journal of Photovoltaics 투고 경험을 바탕으로 기술 내용을 문서화하는 역량을 발전시키고 있습니다.</p><br><span class="tag">기술 문서</span><span class="tag">논문 투고</span></article><article class="card"><h3>AI 활용 원칙</h3><p>문제 정의와 결과 검증은 사람이 담당하고, AI는 구현 속도와 탐색 범위를 높이는 보조 도구로 사용합니다.</p><br><span class="tag">검증 중심</span><span class="tag">재현성</span></article></div></div></section>
+    <section id="projects"><div class="container"><div class="section-head"><h2>대표 프로젝트</h2><p>현재는 프로젝트의 방향과 사용 기술을 공개합니다. 확인되지 않은 결과 수치는 기재하지 않습니다.</p></div><div class="project-grid"><article class="project"><div><span class="tag">PLECS</span><span class="tag">전력전자</span></div><h3>태양광 GMPPT 시뮬레이션 설계</h3><p>태양광 발전 시스템의 GMPPT 동작을 모델링하고 시뮬레이션하는 학습·개념 검증 프로젝트입니다.</p><div class="status">상세 설계·검증 결과 추후 입력</div></article><article class="project"><div><span class="tag">Python</span><span class="tag">CNN</span></div><h3>용접 불량 검사 에이전트</h3><p>CNN을 활용한 용접 불량 검사 에이전트를 제작했습니다. 데이터와 평가 결과는 추후 추가합니다.</p><div class="status">프로젝트 상세 내용 추후 입력</div></article><article class="project"><div><span class="tag">Python</span><span class="tag">웹·영상</span></div><h3>Python 기반 웹·영상 프로젝트</h3><p>Python과 AI를 활용해 웹 및 영상 관련 작업을 수행했습니다.</p><div class="status">문제정의·개인 기여도 추후 입력</div></article></div><br><div class="note">본 프로젝트들은 실제 선박용 시스템을 직접 설계한 실무 프로젝트가 아니라, 전력·제어·분석 역량을 보여주기 위한 개념 검증 또는 학습 프로젝트입니다.</div></div></section>
+    <section id="process"><div class="container"><div class="section-head"><h2>설계·검증 프로세스</h2><p>향후 각 프로젝트 상세 페이지에 동일한 형식으로 적용합니다.</p></div><div class="process"><div class="step"><b>01 요구조건</b><span>문제와 목표를 전기적 사양으로 정리</span></div><div class="step"><b>02 가정</b><span>제한조건과 모델의 범위 설정</span></div><div class="step"><b>03 설계</b><span>회로·제어·파라미터 결정</span></div><div class="step"><b>04 시뮬레이션</b><span>PLECS 및 코드로 동작 확인</span></div><div class="step"><b>05 검증</b><span>정상·과도·비정상 조건 비교</span></div><div class="step"><b>06 개선</b><span>오류 원인 분석과 재검증</span></div></div></div></section>
+    <section><div class="container"><div class="section-head"><h2>문제 해결과 기술 도구</h2><p>예상과 다른 결과를 분석하고 개선한 실제 사례는 추후 추가합니다.</p></div><div class="split"><div class="panel"><h3>문제 해결 사례</h3><p>[사례 추후 입력]</p><p class="small">문제 발견 → 원인 후보 정리 → 계산 또는 실험 → 개선 → 재검증</p></div><div class="panel"><h3>도구 사용 원칙</h3><p>PLECS는 모델링·시뮬레이션, C언어는 제어 로직 이해, Python은 데이터 분석·자동화, AI는 구현 보조에 사용합니다.</p></div></div></div></section>
+    <section id="education"><div class="container"><div class="section-head"><h2>학력·교육·활동</h2><p>세부 날짜와 역할은 추후 입력합니다.</p></div><div class="timeline"><div class="timeline-item"><h3>부경대학교 · 전기공학과</h3><p>총학점 3.83 · 전공학점 3.96</p></div><div class="timeline-item"><h3>HD현대중공업 Future Builder 아카데미</h3><p>교육 이수 · 세부 내용 추후 입력</p></div><div class="timeline-item"><h3>[방산] 방위산업 실무</h3><p>핵심기술 이해 및 신뢰도확보 설계 · 세부 내용 추후 입력</p></div><div class="timeline-item"><h3>IEEE Journal of Photovoltaics 투고</h3><p>논문 제목·투고 상태·역할 추후 입력</p></div><div class="timeline-item"><h3>러닝동아리 ‘아이구다리야’</h3><p>활동 내용 추후 입력</p></div><div class="timeline-item"><h3>자격</h3><p>운전면허 보통 2종 · 취득일 추후 입력</p></div></div></div></section>
+    <section id="interest-company">
+      <div class="container">
+        <div class="section-head"><h2>관심기업</h2><p>OpenDART 2025년 사업보고서를 기준으로 정리한 HD현대중공업의 연결 재무정보입니다.</p></div>
+        <div class="interest-card">
+          <div class="interest-table-wrap">
+            <table class="interest-table">
+              <tbody>
+                <tr><th scope="row">회사명</th><td>HD현대중공업</td></tr>
+                <tr><th scope="row">사업연도</th><td>2025년</td></tr>
+                <tr><th scope="row">재무제표 기준</th><td>연결</td></tr>
+                <tr><th scope="row">매출액</th><td class="interest-amount">17,580,633,257,000원</td></tr>
+                <tr><th scope="row">영업이익</th><td class="interest-amount">2,037,510,103,000원</td></tr>
+                <tr><th scope="row">영업이익률</th><td class="interest-amount">11.59%</td></tr>
+                <tr><th scope="row">수주잔고</th><td class="interest-amount">56,384,472,000,000원</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <h3 class="interest-subtitle">수주잔고 세부 내역</h3>
+          <div class="interest-table-wrap">
+            <table class="interest-table">
+              <tbody>
+                <tr><th scope="row">조선</th><td class="interest-amount">44,351,125,000,000원</td></tr>
+                <tr><th scope="row">해양플랜트</th><td class="interest-amount">2,445,087,000,000원</td></tr>
+                <tr><th scope="row">기타</th><td class="interest-amount">9,588,260,000,000원</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="interest-meta"><span>사업보고서 접수번호: 20260320000859</span><span>기준일: 2025년 12월 31일</span></p>
+          <p class="interest-source">출처: OpenDART 2025년 사업보고서</p>
+        </div>
+      </div>
+    </section>
+    <section id="contact"><div class="container"><div class="section-head"><h2>Contact</h2><p>전력 시스템 모델링과 설계 검증에 대해 이야기하고 싶으시다면 연락해 주세요.</p></div><div class="actions"><a class="button primary" href="mailto:[이메일 입력]">[이메일 입력]</a><a class="button secondary" href="#" aria-label="이력서 다운로드 준비 중">이력서 추후 추가</a></div></div></section>
+    <div class="chatbot-action"><div class="container"><div class="actions"><a class="button chatbot-link" href="./chatbot.html" aria-label="안전 챗봇 이용하기" title="안전 챗봇 이용하기"><img src="./safety-helmet-logo.png" alt=""></a></div></div></div>
+  </main>
+  <footer><div class="container footer-grid"><div><strong>[이름 입력]</strong><p>선박 전장설계 포트폴리오</p></div><div><p>수업 실습에서 AI로 생성한 자료, 회사 공식 자료 아님</p><p>© 2026 [이름 입력]</p></div></div></footer>
+</body>
+</html>
